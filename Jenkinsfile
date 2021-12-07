@@ -17,7 +17,7 @@ node{
    stage('Build Docker Imager'){
    sh 'docker build -t srishakthi/myweb:0.0.2 .'
    }
-   stage('Docker Image Push'){
+   stage('Docker Image Push to container'){
    withCredentials([string(credentialsId: 'dockerPass', variable: 'dockerPassword')]) {
    sh "docker login -u srishakthi -p ${dockerPassword}"
     }
@@ -32,6 +32,7 @@ node{
 	try{
 		sh 'docker rm -f tomcattest'
 	}catch(error){
+		
 		//  do nothing if there is an exception
 	}
    stage('Docker deployment'){
