@@ -24,7 +24,7 @@ node{
    sh 'docker push srishakthi/myweb:0.0.2'
    }
    stage('Nexus Image Push'){
-   sh "docker login -u srishakthi -p ${dockerPassword} 3.110.223.182:8081"
+   sh "docker login -u srishakthi -p Akilandeshwari@27 3.110.223.182:8081"
    sh "docker tag srishakthi/myweb:0.0.3 3.110.223.182:8081/srishakthi:1.0.0"
    sh 'docker push 3.110.223.182:8081/srishakthi:1.0.0'
    }
